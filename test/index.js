@@ -54,7 +54,7 @@ test('POST /api/cars give valid data should return json array data', function (a
     .expect(201)
     .expect('Content-Type', /json/)
     .end(function (err, res) {
-
+ 
       //Assert
       assert.isNot(res.body, undefined)
       assert.isEquivalent(res.body.model, expect.model)
@@ -63,6 +63,7 @@ test('POST /api/cars give valid data should return json array data', function (a
       assert.error(err, 'No error')
       assert.end()
 
+      
       //clean up
       GarageModel.findById.restore()
       GarageModel.prototype.save.restore()

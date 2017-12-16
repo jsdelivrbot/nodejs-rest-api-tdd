@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/khairultp/nodejs-rest-api-tdd.svg?branch=master)](https://travis-ci.org/khairultp/nodejs-rest-api-tdd)
 
-## Want to use this project?
+## Use this project
 
 1. Fork/Clone
 2. Install dependencies - `npm install`
