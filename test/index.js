@@ -52,7 +52,7 @@ test('POST /api/cars give valid data should return json array data', function (a
     .post('/api/cars')
     .send(expect)
     .expect(201)
-    .expect('Content-Type', /json/)
+    .expect('Content-Type', /html/)
     .end(function (err, res) {
  
       //Assert
