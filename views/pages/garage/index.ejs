@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../../partials/header.ejs %>
+  <style>
+      #list .align-left {
+          text-align: left
+      }
+  </style>
+</head>
+
+<body>
+
+<% include ../../partials/nav.ejs %>
+
+<div class="container">
+<% if(message) { %>
+    <div class="alert alert-info">
+        <strong>Information !</strong> <%= message %> 
+    </div>
+<% } %> 
+<div class="row">
+    <div class="col-md-6"><h2>Garages List</h2></div>
+    <div class="col-md-6 pull-right">    
+        <div class="pull-right">
+            <h2>
+                <a href="/garages/add" class="btn btn-info" role="button">New</a>   
+            </h2> 
+        </div>
+    </div>
+</div>
+
+<table id="list" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+            <th>Max Car</th>
+            <th>Cars</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% results.forEach(function(r) { %>
+        <tr>
+            <td><%= r.name %></td>
+            <td><%= r.address %></td>
+            <td><%= r.phoneNumber %></td>
+            <td><%= r.emailAddress %></td>
+            <td><%= r.maxCars %></td>
+            <td class="align-left">
+                <ul>
+                    <% r.cars.forEach(function(car) { %>
+                        <li><%= car.brand %> - <%= car.model %></li>
+                    <% }); %>
+                </ul>
+            </td>   
+            <td>
+                <a href="/garages/edit/<%= r.id %>">Edit</a> 
+                <a href="/garages/delete/<%= r.id %>">Delete</a> 
+            </td>
+        </tr>
+    <% }); %>
+    </tbody>
+</table>
+
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#list').DataTable();
+    } );
+</script>
+</body>
+</html>

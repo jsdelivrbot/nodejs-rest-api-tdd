@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../../partials/header.ejs %>
+</head>
+
+<body>
+
+<% include ../../partials/nav.ejs %>
+
+<div class="container">
+<h2>Car Detail</h2>
+
+<% if(error) { %>
+    <div class="alert alert-danger">
+        <strong>Something wrong!</strong> <%= error %>
+    </div>
+<% } %> 
+
+<form id="form" action="<%= action %>" method="POST">
+    <table id="example" class="table table-striped table-bordered table-condensed" cellspacing="0" width="100%">
+        <colgroup> 
+            <col class="col-xs-2"> 
+            <col class="col-xs-4"> 
+        </colgroup>
+        <tr>
+            <td><label for="brand">Brand *</label></td>
+            <td><input class="form-control input-sm" type="text" name="brand" id="brand" value="<%= brand %>" <%= readOnly %>></input></td>
+        </tr>
+        <tr>
+            <td><label for="model">Model *</label></td>
+            <td><input class="form-control input-sm" type="text" name="model" id="model" value="<%= model %>" <%= readOnly %>></input></td>
+        </tr>
+        <tr>
+            <td><label for="year">Year *</label></td>
+            <td><input class="form-control input-sm" type="text" name="year" id="year" value="<%= year %>" <%= readOnly %>></input></td>
+        </tr>
+        <tr>
+            <td><label for="color">Color</label></td>
+            <td><input class="form-control input-sm" type="text" name="color" id="color" value="<%= color %>" <%= readOnly %>></input></td>
+        </tr>
+        <tr>
+            <td><label for="mileage">Mileage</label></td>
+            <td><input class="form-control input-sm" type="text" name="mileage" id="mileage" value="<%= mileage %>" <%= readOnly %>></input></td>
+        </tr>
+        <tr>
+            <td><label for="engine">Engine</label></td>
+            <td><input class="form-control input-sm" type="text" name="engine" id="engine" value="<%= engine %>" <%= readOnly %>></input></td>
+        </tr>
+        <tr>
+            <td><label for="power">Power (HP)</label></td>
+            <td><input class="form-control input-sm" type="text" name="power" id="power" value="<%= power %>" <%= readOnly %>></input></td>
+        </tr>
+        <tr>
+            <td><label for="price">Price</label></td>
+            <td><input class="form-control input-sm" type="text" name="price" id="price" value="<%= price %>" <%= readOnly %>></input></td>
+        </tr>
+        <tr>
+            <td><label for="registrationDate">Registration Date *</label></td>
+            <td><input class="form-control input-sm" type="text" name="registrationDate" id="registrationDate" value="<%= registrationDate %>" <%= readOnly %>></input></td>
+        </tr>
+        <tr>
+            <td><label for="garage">Garage *</label></td>
+            <td>
+                <select class="form-control" name="garage" id="garage" <%= readOnly %>>
+                    <option value="">--choose--</option>
+                    <% garages.forEach(function(g) { %>
+                        <option value="<%= g.id %>" <%= g.id == garage ? 'selected' : '' %>><%= g.name %></option>
+                    <% }); %>
+                </select>
+                <input id="curGarage" name="currGarage" type="hidden" value="<%= currGarage %>" />
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <button class="btn btn-primary" type="submit" value="Submit"><%= readOnly ? 'Delete' : 'Save' %></button>
+                <a href="/cars" class="btn btn-danger" role="button">Cancel</a>       
+            </td>
+        </tr>
+    </table>
+</form>
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#registrationDate').datepicker()
+})
+</script>
+</body>
+</html>

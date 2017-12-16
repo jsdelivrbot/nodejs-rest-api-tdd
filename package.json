@@ -1,0 +1,38 @@
+{
+  "name": "nodejs-rest-api-tdd",
+  "version": "0.3.0",
+  "description": "A sample Node.js app using Express 4 with TDD",
+  "engines": {
+    "node": "8.9.1"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node ./test | ./node_modules/.bin/tap-spec",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "express-promise-router": "^2.0.0",
+    "mongoose": "^4.13.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.5",
+    "request": "^2.81.0",
+    "sinon": "^4.1.3",
+    "supertest": "^3.0.0",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/khairultp/nodejs-rest-api-tdd"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
+}
