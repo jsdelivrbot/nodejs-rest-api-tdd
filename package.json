@@ -6,7 +6,7 @@
     "node": "8.9.1"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "node index.js",
     "test": "node ./test | ./node_modules/.bin/tap-spec",
     "dev": "nodemon server.js"
   },
