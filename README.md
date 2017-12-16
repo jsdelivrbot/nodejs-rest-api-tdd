@@ -1,6 +1,6 @@
 # Building a RESTful API with Mongoose and TDD
 
-[![Build Status](https://travis-ci.org/mjhea0/node-koa-api.svg?branch=master)](https://travis-ci.org/mjhea0/node-koa-api)
+[![Build Status](https://travis-ci.org/khairultp/nodejs-rest-api-tdd.svg?branch=master)](https://travis-ci.org/khairultp/nodejs-rest-api-tdd)
 
 ## Want to use this project?
 
